@@ -4,8 +4,7 @@
 #define BAUDRATE 9600
 
 #define FB_MOTOR_CMD  6
-#define LR_MOTOR_CMD  9
-#define LIFTER_CMD    5 
+#define LR_MOTOR_CMD  9 
 
 // pulse widths bounds of the receiver's PWM output
 #define PWM_HIGH_BOUND  2000
@@ -20,8 +19,7 @@
 #define IN4 8
 
 // motor speed control
-#define ENA 7
-#define ENB 10
+#define ENA_B 7
 uint8_t motor_speed = 0;
 int y = 0;
 int x = 0;
@@ -45,14 +43,11 @@ void setup()
   pinMode(IN4, OUTPUT);
 
   // setting speed control
-  pinMode(ENA, OUTPUT);
-  pinMode(ENB, OUTPUT);
+  pinMode(ENA_B, OUTPUT);
 
   // setup RC pins
   pinMode(FB_MOTOR_CMD, INPUT);
   pinMode(LR_MOTOR_CMD, INPUT);
-  pinMode(LIFTER_CMD, INPUT);
-  
 }
 
 void loop()
@@ -66,8 +61,7 @@ void loop()
 
   int motor_speed = sqrt(pow(y, 2) + pow(x, 2));
 
-  analogWrite(ENA, motor_speed);
-  analogWrite(ENB, motor_speed);
+  analogWrite(ENA_B, motor_speed);
 
   // forward
   if(y > x && y > 0 && y > -x)
