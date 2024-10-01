@@ -20,8 +20,7 @@
 #define IN4 8
 
 // motor speed control
-#define ENA 7
-#define ENB 10
+#define ENA_B 7
 uint8_t motor_speed = 0;
 int y = 0;
 int x = 0;
@@ -45,8 +44,7 @@ void setup()
   pinMode(IN4, OUTPUT);
 
   // setting speed control
-  pinMode(ENA, OUTPUT);
-  pinMode(ENB, OUTPUT);
+  pinMode(ENA_B, OUTPUT);
 
   // setup RC pins
   pinMode(FB_MOTOR_CMD, INPUT);
@@ -66,8 +64,7 @@ void loop()
 
   int motor_speed = sqrt(pow(y, 2) + pow(x, 2));
 
-  analogWrite(ENA, motor_speed);
-  analogWrite(ENB, motor_speed);
+  analogWrite(ENA_B, motor_speed);
 
   // forward
   if(y > x && y > 0 && y > -x)
