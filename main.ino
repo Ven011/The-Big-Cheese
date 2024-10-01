@@ -4,8 +4,7 @@
 #define BAUDRATE 9600
 
 #define FB_MOTOR_CMD  6
-#define LR_MOTOR_CMD  9
-#define LIFTER_CMD    5 
+#define LR_MOTOR_CMD  9 
 
 // pulse widths bounds of the receiver's PWM output
 #define PWM_HIGH_BOUND  2000
@@ -49,8 +48,6 @@ void setup()
   // setup RC pins
   pinMode(FB_MOTOR_CMD, INPUT);
   pinMode(LR_MOTOR_CMD, INPUT);
-  pinMode(LIFTER_CMD, INPUT);
-  
 }
 
 void loop()
